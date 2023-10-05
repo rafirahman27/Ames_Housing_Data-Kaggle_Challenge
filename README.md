@@ -1,187 +1,110 @@
-# Project 2 - Ames Housing Data and Kaggle Challenge
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 1: Ames Housing Data and Kaggle Challenge
 
-Welcome to Project 2! It's time to start modeling.
-
-**Primary Learning Objectives:**
-
-1. Creating and iteratively refining a regression model
-1. Using [Kaggle](https://www.kaggle.com/) to practice the modeling process
-1. Providing business insights through reporting and presentation.
-
-You are tasked with creating a regression model based on the Ames Housing Dataset. This model will predict the price of a house at sale.
-
-The Ames Housing Dataset is an exceptionally detailed and robust dataset with over 70 columns of different features relating to houses.
-
-Secondly, we are hosting a competition on Kaggle to give you the opportunity to practice the following skills:
-
-- Refining models over time
-- Use of train-test split, cross-validation, and data with unknown values for the target to simulate the modeling process
-- The use of Kaggle as a place to practice data science
-
-As always, you will be submitting a technical report and a presentation. **You may find that the best model for Kaggle is not the best model to address your data science problem.**
-
-## Set-up
-
-Before you begin working on this project, please do the following:
-
-1. Sign up for an account on [Kaggle](https://www.kaggle.com/)
-2. **IMPORTANT**: Click this link ➡️ [Regression Challenge Sign Up](https://cutt.ly/kaggle911) ⬅️ to **join** the competition (otherwise you will not be able to make submissions!)
-3. Review the material on the [DSIR-910 Regression Challenge](https://www.kaggle.com/competitions/dsi-910-ames-housing-challenge/overview)
-4. Review the [data description](https://www.kaggle.com/competitions/dsi-910-ames-housing-challenge/data).
-
-## The Modeling Process
-
-1. The train dataset has all of the columns that you will need to generate and refine your models. The test dataset has all of those columns except for the target that you are trying to predict in your Regression model.
-2. Generate your regression model using the training data. We expect that within this process, you'll be making use of:
-    - train-test split
-    - cross-validation / grid searching for hyperparameters
-    - strong exploratory data analysis to question correlation and relationship across predictive variables
-    - code that reproducibly and consistently applies feature transformation (such as the preprocessing library)
-3. Predict the values for your target column in the test dataset and submit your predictions to Kaggle to see how your model does against unknown data.
-    - **Note**: Kaggle expects to see your submissions in a specific format. Check the challenge's page to make sure you are formatting your CSVs correctly!
-    - **You are limited to models you've learned in class**. In other words, you cannot use XGBoost, Neural Networks or any other advanced model for this project.
-4. Evaluate your models!
-    - consider your evaluation metrics
-    - consider your baseline score
-    - how can your model be used for inference?
-    - why do you believe your model will generalize to new data?
-
-## Submission
-
-Materials must be submitted by the beginning of class on presentation day, **Friday, October 6th @ 10 AM EST**.
-
-The last day for the Kaggle competition will be **Thursday, October 5th @ 11:59 PM EST**.
-
-Your technical report will be hosted on Github Enterprise. Make sure it includes:
-
-- A README.md (that isn't this file).
-- Jupyter notebook(s) with your analysis and models (renamed to describe your project)
-- At least three successful prediction submissions on [DSIR-910 Regression Challenge](https://www.kaggle.com/competitions/dsi-910-ames-housing-challenge/overview) --  you should see your name in the "[Leaderboard](https://www.kaggle.com/competitions/dsi-910-ames-housing-challenge/leaderboard)" tab.
-- Data files
-- Presentation slides
-- Any other necessary files (images, etc.)
-
-**Submit a link to your repo in Google Classroom.**
-
+# Predicting Housing Sale Price for New Real Estate Development Project
 ---
 
-## Presentation Structure
+The designs for a new development project have been signed off to redesign and modernize Ames. The developers are looking to understand the sale price of the houses in the area to better understand the cost of purchasing the land and ensuring individuals are appropriately compensated during the transaction. 
 
-- **Presentation should be between 5-8 minutes.**
-- Use Google Slides or some other visual aid (Keynote, Powerpoint, etc).
-- Consider your audience. 
-(This depends on your problem statement!)
-- Start with the **data science problem**.
-- Use visuals that are appropriately scaled and interpretable.
-- Talk about your procedure/methodology (high level).
-- Talk about your primary findings.
-- Make sure you provide **clear recommendations** that follow logically from your analyses and narrative and answer your data science problem.
-- [More presentation advice here!](https://git.generalassemb.ly/dsi-911/course-info/blob/master/presentation-advice.md)
-
-Be sure to rehearse and time your presentation before class.
+The objective of this project, will be to predicted and estimate value on the houses by utilizing a regression model. 
+<br>
 
 ---
+## Research
 
-## Rubric
+Real estate development projects going through long and meticulous planning process before they can even break ground. Think about the times that you have wanted to or have done work to your own house, it could be as small as changing the sink or shower to extending your property for more space but lets amplify that a little bit. With large level projects the planning stage could range from 6 months to 6 years (https://lev.co/blog/assets/real-estate-development-timeline/#:~:text=Your%20project%20could%20take%20six,stages%20of%20the%20development%20process).
 
-Your local instructor will evaluate your project (for the most part) using the following criteria.  You should make sure that you consider and/or follow most if not all of the considerations/recommendations outlined below **while** working through your project.
 
-**Scores will be out of 27 points based on the 9 items in the rubric.** 
-*3 points per section*
 
-| Score | Interpretation |
-| --- | --- |
-| **0** | *Project fails to meet the minimum requirements for this item.* |
-| **1** | *Project meets the minimum requirements for this item, but falls significantly short of portfolio-ready expectations.* |
-| **2** | *Project exceeds the minimum requirements for this item, but falls short of portfolio-ready expectations.* |
-| **3** | *Project meets or exceeds portfolio-ready expectations; demonstrates a thorough understanding of every outlined consideration.* |
+## Data Dictionary
+---
+The full data dictionary used within this project can be found at:https://www.kaggle.com/competitions/dsi-910-ames-housing-challenge/data
 
-### The Data Science Process
+The data dictionary below contain the information about the data within the selected train data csv file.
 
-**Problem Statement**
-- Is it clear what the student plans to do?
-- What type of model will be developed?
-- How will success be evaluated?
-- Is the scope of the project appropriate?
-- Is it clear who cares about this or why this is important to investigate?
-- Does the student consider the audience and the primary and secondary stakeholders?
+---
+|Feature|Type|Dataset|Description|
+|---|---|---|---|
+|Selected Train Data|  |  |
+|Id|*Int*|544|Identifying number for each property|
+|Overall Qual|*int*|6|Categorical data giving the property a ranking of its overall quality ranging from 1 to 10|
+|Year Built|*int*| 2006 |The year the property was built |
+|Full Bath|*int*| 2 | Number of full baths |
+|Half Bath|*int*| 1 | Number of Half Baths|
+|Garage Area|*float*|475.0|The size of the garage in square feet|
+|Total Bsmt SF |*float*| 725.0 | The square footage of the Basement |
+|Gr Liv Area|*int*| 1479 | Above the ground living area square feet |
+|1st Flr SF|*int*| 725 |The square footage of the 1st floor|
+|2nd Flr SF|*int*| 754 |The square footage of the 2nd floor|
+|SalePrice|*int*| 130500 | The sale price of the property |
 
-**Data Cleaning and EDA**
-- Are missing values imputed appropriately?
-- Are distributions examined and described?
-- Are outliers identified and addressed?
-- Are appropriate summary statistics provided?
-- Are steps taken during data cleaning and EDA framed appropriately?
-- Does the student address whether or not they are likely to be able to answer their problem statement with the provided data given what they've discovered during EDA?
+---
+## Executive Summary
+---
+Development projects of any scale are a costly and lengthy process, whether you are having construction work done on your own house, or looking to build a new house for yourself. However, some of the largest scale projects reach figures that most of us can not comprehend, with the top 2 largest projects costing "US$500 billion" and "US$113 billion" (https://www.international-construction.com/news/7-of-the-world-s-most-expensive-construction-projects/8026711.article) as reported by international construction. 
 
-**Preprocessing and Modeling**
-- Are categorical variables one-hot encoded?
-- Does the student investigate or manufacture features with linear relationships to the target?
-- Have the data been scaled appropriately?
-- Does the student properly split and/or sample the data for validation/training purposes?
-- Does the student utilize feature selection to remove noisy or multi-collinear features?
-- Does the student test and evaluate a variety of models to identify a production algorithm (**AT MINIMUM:** linear regression, lasso, and ridge)?
-- Does the student defend their choice of production model relevant to the data at hand and the problem?
-- Does the student explain how the model works and evaluate its performance successes/downfalls?
+In this project we will be looking to understand what how much the developer will need to spend in the first stage of the process, in which they need acquire the land. In order to do this we will looking to identify the categories that contribute the most to the price of the house and utilise this data to create an efficient model that will help us understand the initial cost whilst also ensuring that property owners are fairly compensated.
 
-**Evaluation and Conceptual Understanding**
-- Does the student accurately identify and explain the baseline score?
-- Does the student select and use metrics relevant to the problem objective?
-- Is more than one metric utilized in order to better assess performance?
-- Does the student interpret the results of their model for purposes of inference?
-- Is domain knowledge demonstrated when interpreting results?
-- Does the student provide appropriate interpretation with regards to descriptive and inferential statistics?
+---
+## Methodology
+---
 
-**Conclusion and Recommendations**
-- Does the student provide appropriate context to connect individual steps back to the overall project?
-- Is it clear how the final recommendations were reached?
-- Are the conclusions/recommendations clearly stated?
-- Does the conclusion answer the original problem statement?
-- Does the student address how findings of this research can be applied for the benefit of stakeholders?
-- Are future steps to move the project forward identified?
+To identify the Top 10 countries we will be talking the population and number of doctors per 1000 data found on gapminder to identify the countries that have the least amount of doctors. The population of the countries must be considered to ensure a fair comparison is made. For example if both Country A and B have 10,000 doctors, you would initially think they are the same. However if  A has a population 1 million and B has 4 million, your interpretation changes, now we can see that country B would be higher in the ranking for least accessible healthcare system.
 
-### Organization and Professionalism
+In order to do this, I will be calculating the average number of doctors for each country, to accomdate for any missing data from across the years. The missing date could be due to a number of things such as, the governments not having the resources or not having the money to consistently collect the data or many other reasons. To ensure that data wasn't simply dropped and missing out on countries that could potentially be at the top of the list an average will be calculated. The exception to this will if a country only has 1 data point, we can not assume that number hasn't changed, resulting in that country being dropped.
 
-**Project Organization**
-- Are modules imported correctly (using appropriate aliases)?
-- Are data imported/saved using relative paths?
-- Does the README provide a good executive summary of the project?
-- Is markdown formatting used appropriately to structure notebooks?
-- Are there an appropriate amount of comments to support the code?
-- Are files & directories organized correctly?
-- Are there unnecessary files included?
-- Do files and directories have well-structured, appropriate, consistent names?
+Additionally, as the data provided is doctors per 1000 people. We will be set the assumption that by dividing the number by 1000 and multiplying by the population we can workout how many doctors there are in total.
 
-**Visualizations**
-- Are sufficient visualizations provided?
-- Do plots accurately demonstrate valid relationships?
-- Are plots labeled properly?
-- Are plots interpreted appropriately?
-- Are plots formatted and scaled appropriately for inclusion in a notebook-based technical report?
+When looking into the money invested into healthcare we looking at the amount of money the government has on average spent per a person. We will be taking that data and multiplying it by the population and then calculating the mean in order to understand how much each country has invested into their healthcare industry over the last 10 years.
 
-**Python Syntax and Control Flow**
-- Is care taken to write human readable code?
-- Is the code syntactically correct (no runtime errors)?
-- Does the code generate desired results (logically correct)?
-- Does the code follows general best practices and style guidelines?
-- Are Pandas functions used appropriately?
-- Are `sklearn` methods used appropriately?
+---
+# Conclusion & Recommendations
+---
+In conclusion we were able to create the following list which shows the Top 10 countries that have the least amount of doctors that could potentially benefit from receiving additional support from Doctors Go Anywehere. In order to better understand these results we also looked at the amount of money each country invested into their population's healthcare and looked at the country's average life expectancy.
 
-**Presentation**
-- Is the problem statement clearly presented?
-- Does a strong narrative run through the presentation building toward a final conclusion?
-- Are the conclusions/recommendations clearly stated?
-- Is the level of technicality appropriate for the intended audience?
-- Is the student substantially over or under time?
-- Does the student appropriately pace their presentation?
-- Does the student deliver their message with clarity and volume?
-- Are appropriate visualizations generated for the intended audience?
-- Are visualizations necessary and useful for supporting conclusions/explaining findings?
+---
+|Ranking Position|Lowest amount of Doctors Country|Lowest amount of money spent Country|Lowest Average Life
+|---|---|---|---|
+| 1 | Ukraine | Ukraine  | Eritrea |
+| 2 | Naura | Naura | Kiribati |
+| 3 | Slovenia | Slovenia | Nauru |
+| 4 | Gambia | Gambia | Gambia |
+| 5 | Colombia | Colombia | Sao Tome and Principe |
+| 6 | Kiribati | Kiribati | Ukraine |
+| 7 | Sao Tome and Principe | Sao Tome and Principe | Egypt |
+| 8 | Turkey | Turkey | St. Kitts and Nevis |
+| 9 | St. Kitts and Nevis | St. Kitts and Nevis | Brazil |
+| 10 | Egypt | Egypt | China |
 
-In order to pass the project, students must earn a minimum score of 1 for each category.
-- Earning below a 1 in one or more of the above categories would result in a failing project.
-- While a minimum of 1 in each category is the required threshold for graduation, students should aim to earn at least an average of 1.5 across each category. An average score below 1.5, while it may be passing, means students may want to solicit specific feedback in order to significantly improve the project before showcasing it as part of a portfolio or the job search.
+---
+From the list above we can make the assumption that on average the less a country spends on their populations healthcare, the less doctors that population will have access to. Now this is still as they could be other factors involved for example the education system not being developed enough.
+<br><br>
+When comparing the average life expectancy to the lowest amount of doctors we can see that the list has changed up. With 3 new location popping up; Eritrea, China and Brazil. This raises an interesting question as all 3 where found in the Top 10 highest healthcare contribution by the government as you can see from the list below. As a recommendation I would suggest to look further into why this could potentially be the case.
+<br><br>
+I would also recommend find data regarding private healthcare to see how it could potentially change these finding as many countries do rely more on the private services that are available.
 
-### REMEMBER:
+---
+|Ranking Position|Highest Healthcare Contribution Countries|
+|---|---|
+|1| Japan |
+|2| Czech Republic|
+|3| Fiji|
+|4| Italy|
+|5| Canada|
+|6| Eritea|
+|7| China|
+|8| Netherlands|
+|9| Austrialia|
+|10| Brazil|
 
-This is a learning environment and you are encouraged to try new things, even if they don't work out as well as you planned! While this rubric outlines what we look for in a _good_ project, it is up to you to go above and beyond to create a _great_ project. **Learn from your failures and you'll be prepared to succeed in the workforce**.
+---
+Some more recommendation that can be made from my findings are list below:
+1) Understand how China a significantly large amount of Doctors whilst having a low amount of contribution from the government
+2) Investigate Why China and San Marino took a deep in life expectancy from 1995 to 2002
+3) Investigate how Japan has one of highest life expectancies with a low amount of Doctors compared to the rest.
+
+---
+# Citations and Special Mentions
+---
+Data Collected from Gapminder "https://www.gapminder.org/data/"
+Research and quotations from The Guardian "https://www.theguardian.com/doctors-without-borders/2022/nov/21/msf-doctors-without-borders-year-in-review"
+Thank you to Tim Book(GA Staff), Rowan Schaefer(GA Staff) and Piotr Jankowski(friend) for helping debug, simplify and understand
