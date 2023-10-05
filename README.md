@@ -24,7 +24,6 @@ The data dictionary below contain the information about the data within the sele
 ---
 |Feature|Type|Dataset|Description|
 |---|---|---|---|
-|Selected Train Data|  |  |
 |Id|*Int*|544|Identifying number for each property|
 |Overall Qual|*int*|6|Categorical data giving the property a ranking of its overall quality ranging from 1 to 10|
 |Year Built|*int*| 2006 |The year the property was built |
