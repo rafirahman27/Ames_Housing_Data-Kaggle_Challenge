@@ -5,17 +5,17 @@
 
 The designs for a new development project have been signed off to redesign and modernize Ames. The developers are looking to understand the sale price of the houses in the area to better understand the cost of purchasing the land and ensuring individuals are appropriately compensated during the transaction. 
 
-The objective of this project, will be to predicted and estimate value on the houses by utilizing a regression model. 
+The objective of this project, will be to understand how the square footage of different areas within the property affects the sales price, then predict and estimate value on the houses by utilizing a regression model. 
 <br>
 
 ---
 ## Research
 
-Real estate development projects going through long and meticulous planning process before they can even break ground. Think about the times that you have wanted to or have done work to your own house, it could be as small as changing the sink or shower to extending your property for more space but lets amplify that a little bit. With large level projects the planning stage could range from 6 months to 6 years 
+Real estate development projects going through long and meticulous planning processes before they can even break ground. Think about the times that you have wanted to or have done work to your own house, it could be as small as changing the sink or shower to extending your property for more space but lets amplify that a little bit. With large level projects the planning stage could range from 6 months to 6 years. 
 
 In the cases of large development projects like this investors and developers will initially do research to understand and identify areas that could benefit from significant development, whether that involves more houses or modernizing the city/town to accommodate for newer businesses or shopping malls. Now of course, the larger the project the longer the planning process will take and the more hoops that need to be jumped through and paper work that needs to be done to get sign off.
 
-When performing these large scale projects especially when housing is taken into consideration, affordability for the end user needs to be taken into consideration aswell. In these situations most developers will create a selection of houses that can be more affordable, benefitting both parties, for the investors it means the properties are easier to sell and the buyer is able to get into a new property at a lower cost.
+When performing these large scale projects especially when housing is taken into consideration, affordability for the end user needs to be taken into consideration aswell. In these situations most developers will create a selection of houses that can be more affordable, benefitting both parties, for the investors it means the properties are easier to sell and the buyer is able to get into a new property at a lower cost. However, inorder to do this, developers will look to find ways to cut initial costs or even presell houses before the construction begins, leading to the horror stories that some of us have may have heard about poorly built homes as we can see one explain reported by Daily Mail, https://www.dailymail.co.uk/news/article-4310428/Buyers-new-build-homes-reveal-property-nightmares.html.
 
 (https://lev.co/blog/assets/real-estate-development-timeline/#:~:text=Your%20project%20could%20take%20six,stages%20of%20the%20development%20process).
 (https://lichfields.uk/blog/2016/november/8/start-to-finish-how-quickly-do-large-scale-housing-sites-deliver/)
@@ -62,7 +62,7 @@ Once we have selected the data, we will look to create our baseline Linear Regre
 # Conclusion & Recommendations
 ---
 
-In conclusion we were able to predict that it would cost $157135272.02 with estimate variation of $17141656.37. We determined this by utilizing a Ridge CV Regression model, with the data going through Polynomial and Standard Scaling preprocessing. 
+In conclusion we were able to predict that it would cost $157,135,272.02 with estimate variation of $17,141,656.37. We determined this by utilizing a Ridge CV Regression model, with the data going through Polynomial and Standard Scaling preprocessing. 
 
 ---
 |Model|R2 Score(train)|R2 Score(Val)|MAE|RMSE|Description|
