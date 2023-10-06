@@ -13,10 +13,12 @@ The objective of this project, will be to predicted and estimate value on the ho
 
 Real estate development projects going through long and meticulous planning process before they can even break ground. Think about the times that you have wanted to or have done work to your own house, it could be as small as changing the sink or shower to extending your property for more space but lets amplify that a little bit. With large level projects the planning stage could range from 6 months to 6 years 
 
-Sometimes the best way to understand the scale of a project is to look at the cost. As reported by International Construction the top 3 most expensive projects around the world are; "Neom, Saudi Arabia - US$500 billion", "California High-Speed Rail, US – US$113 billion" and "King Abdullah Economic City, Saudi Arabia - US$100 billion"
+In the cases of large development projects like this investors and developers will initially do research to understand and identify areas that could benefit from significant development, whether that involves more houses or modernizing the city/town to accommodate for newer businesses or shopping malls. Now of course, the larger the project the longer the planning process will take and the more hoops that need to be jumped through and paper work that needs to be done to get sign off.
+
+When performing these large scale projects especially when housing is taken into consideration, affordability for the end user needs to be taken into consideration aswell. In these situations most developers will create a selection of houses that can be more affordable, benefitting both parties, for the investors it means the properties are easier to sell and the buyer is able to get into a new property at a lower cost.
 
 (https://lev.co/blog/assets/real-estate-development-timeline/#:~:text=Your%20project%20could%20take%20six,stages%20of%20the%20development%20process).
-(https://www.international-construction.com/news/7-of-the-world-s-most-expensive-construction-projects/8026711.article)
+(https://lichfields.uk/blog/2016/november/8/start-to-finish-how-quickly-do-large-scale-housing-sites-deliver/)
 
 ---
 ## Data Dictionary
@@ -64,7 +66,7 @@ In conclusion we were able to predict that it would cost $157135272.02 with esti
 
 ---
 |Model|R2 Score(train)|R2 Score(Val)|MAE|RMSE|Description|
-|---|---|---|---|
+|---|---|---|---|---|---|
 |Model 1|0.771023|0.835513|23307.513959|31779.748064|Baseline|
 |Model 2|0.886713|0.852980|21157.810887|31094.158241|Poly|
 |Model 3|0.777809|0.807667|25021.056681|35564.524098|Dropped Full Bath and Half Bath|
