@@ -11,10 +11,14 @@ The objective of this project, will be to predicted and estimate value on the ho
 ---
 ## Research
 
-Real estate development projects going through long and meticulous planning process before they can even break ground. Think about the times that you have wanted to or have done work to your own house, it could be as small as changing the sink or shower to extending your property for more space but lets amplify that a little bit. With large level projects the planning stage could range from 6 months to 6 years (https://lev.co/blog/assets/real-estate-development-timeline/#:~:text=Your%20project%20could%20take%20six,stages%20of%20the%20development%20process).
+Real estate development projects going through long and meticulous planning process before they can even break ground. Think about the times that you have wanted to or have done work to your own house, it could be as small as changing the sink or shower to extending your property for more space but lets amplify that a little bit. With large level projects the planning stage could range from 6 months to 6 years 
 
+Sometimes the best way to understand the scale of a project is to look at the cost. As reported by International Construction the top 3 most expensive projects around the world are; "Neom, Saudi Arabia - US$500 billion", "California High-Speed Rail, US – US$113 billion" and "King Abdullah Economic City, Saudi Arabia - US$100 billion"
 
+(https://lev.co/blog/assets/real-estate-development-timeline/#:~:text=Your%20project%20could%20take%20six,stages%20of%20the%20development%20process).
+(https://www.international-construction.com/news/7-of-the-world-s-most-expensive-construction-projects/8026711.article)
 
+---
 ## Data Dictionary
 ---
 The full data dictionary used within this project can be found at:https://www.kaggle.com/competitions/dsi-910-ames-housing-challenge/data
@@ -43,67 +47,47 @@ Development projects of any scale are a costly and lengthy process, whether you 
 
 In this project we will be looking to understand what how much the developer will need to spend in the first stage of the process, in which they need acquire the land. In order to do this we will looking to identify the categories that contribute the most to the price of the house and utilise this data to create an efficient model that will help us understand the initial cost whilst also ensuring that property owners are fairly compensated.
 
+
 ---
 ## Methodology
 ---
 
-To identify the Top 10 countries we will be talking the population and number of doctors per 1000 data found on gapminder to identify the countries that have the least amount of doctors. The population of the countries must be considered to ensure a fair comparison is made. For example if both Country A and B have 10,000 doctors, you would initially think they are the same. However if  A has a population 1 million and B has 4 million, your interpretation changes, now we can see that country B would be higher in the ranking for least accessible healthcare system.
+The first step will be to identify how the didn't features affect the price of the house however, with the developers end goal its just the land that the property sits on, the main focus will be to create a model created from the square footage and area data.
 
-In order to do this, I will be calculating the average number of doctors for each country, to accomdate for any missing data from across the years. The missing date could be due to a number of things such as, the governments not having the resources or not having the money to consistently collect the data or many other reasons. To ensure that data wasn't simply dropped and missing out on countries that could potentially be at the top of the list an average will be calculated. The exception to this will if a country only has 1 data point, we can not assume that number hasn't changed, resulting in that country being dropped.
-
-Additionally, as the data provided is doctors per 1000 people. We will be set the assumption that by dividing the number by 1000 and multiplying by the population we can workout how many doctors there are in total.
-
-When looking into the money invested into healthcare we looking at the amount of money the government has on average spent per a person. We will be taking that data and multiplying it by the population and then calculating the mean in order to understand how much each country has invested into their healthcare industry over the last 10 years.
+Once we have selected the data, we will look to create our baseline Linear Regression model as the data is found before we introduce any preprocessing or feature engineering techniques to ensure that we are able understand how they affect how the model performs.
 
 ---
 # Conclusion & Recommendations
 ---
-In conclusion we were able to create the following list which shows the Top 10 countries that have the least amount of doctors that could potentially benefit from receiving additional support from Doctors Go Anywehere. In order to better understand these results we also looked at the amount of money each country invested into their population's healthcare and looked at the country's average life expectancy.
+
+In conclusion we were able to predict that it would cost $157135272.02 with estimate variation of $17141656.37. We determined this by utilizing a Ridge CV Regression model, with the data going through Polynomial and Standard Scaling preprocessing. 
 
 ---
-|Ranking Position|Lowest amount of Doctors Country|Lowest amount of money spent Country|Lowest Average Life
+|Model|R2 Score(train)|R2 Score(Val)|MAE|RMSE|Description|
 |---|---|---|---|
-| 1 | Ukraine | Ukraine  | Eritrea |
-| 2 | Naura | Naura | Kiribati |
-| 3 | Slovenia | Slovenia | Nauru |
-| 4 | Gambia | Gambia | Gambia |
-| 5 | Colombia | Colombia | Sao Tome and Principe |
-| 6 | Kiribati | Kiribati | Ukraine |
-| 7 | Sao Tome and Principe | Sao Tome and Principe | Egypt |
-| 8 | Turkey | Turkey | St. Kitts and Nevis |
-| 9 | St. Kitts and Nevis | St. Kitts and Nevis | Brazil |
-| 10 | Egypt | Egypt | China |
+|Model 1|0.771023|0.835513|23307.513959|31779.748064|Baseline|
+|Model 2|0.886713|0.852980|21157.810887|31094.158241|Poly|
+|Model 3|0.777809|0.807667|25021.056681|35564.524098|Dropped Full Bath and Half Bath|
+|Model 4|0.780299|0.811278|24684.392809|35229.123817|StandardScaled|
+|Model 5|0.885289|0.871826|19836.248501|28053.375859|Poly and SC|
+|Model 5|0.880983|0.877115|19523.526618|27468.513989|RidgeCv|
 
 ---
-From the list above we can make the assumption that on average the less a country spends on their populations healthcare, the less doctors that population will have access to. Now this is still as they could be other factors involved for example the education system not being developed enough.
-<br><br>
-When comparing the average life expectancy to the lowest amount of doctors we can see that the list has changed up. With 3 new location popping up; Eritrea, China and Brazil. This raises an interesting question as all 3 where found in the Top 10 highest healthcare contribution by the government as you can see from the list below. As a recommendation I would suggest to look further into why this could potentially be the case.
-<br><br>
-I would also recommend find data regarding private healthcare to see how it could potentially change these finding as many countries do rely more on the private services that are available.
 
----
-|Ranking Position|Highest Healthcare Contribution Countries|
-|---|---|
-|1| Japan |
-|2| Czech Republic|
-|3| Fiji|
-|4| Italy|
-|5| Canada|
-|6| Eritea|
-|7| China|
-|8| Netherlands|
-|9| Austrialia|
-|10| Brazil|
+From initial looks at the R2 graph, we would assume that model 2, 5 and 6 have very little difference between the them. However when looking at the Mean Absolute Error (MAE) and the Root Mean Square Error(RMSE), the difference becomes a little more obvious. With these values showing the variation between the evaluation prices and the testing prediction, we want to ensure that we select model with the smallest difference to ensure that we can fairly compensate the home owners which is why we have decided to select model 6 as our final model.
 
----
-Some more recommendation that can be made from my findings are list below:
-1) Understand how China a significantly large amount of Doctors whilst having a low amount of contribution from the government
-2) Investigate Why China and San Marino took a deep in life expectancy from 1995 to 2002
-3) Investigate how Japan has one of highest life expectancies with a low amount of Doctors compared to the rest.
+This also helps understand how the preprocessing and feature engineering helped improve the performance of our model. As we can see that introducing Polynominal features on its own only made a small difference to both the MAE and RMSE, but utilising the Standard Scalar to help scale the variables to unit variables, especially in the case of mixing categorical and numerical data around 4000 reduction to both the scores from model 1 to model 5.
+
+When we compare model 5 and model 6, where both these models were trained with the same data, with model 5 using a Linear Regression model and model 6 using a Ridge CV Regression model. I believe model 6 performed better, one due to the added regularization that the Ridge model, helping control the polynomial features and standard scaling that was implements on the data and handling multicollinearity with the data points that highly correlated with the sale price, as we saw within the heatmap during our EDA. The Ridge model also helps prevent overfitting, especially in the case of utilisinng small datasets, ensuring that the model doesn't only work with the training data but also works with any new data that is introduced to the model.
+
+To take this model further, I would recommend trying to introduce more details of the house to see how that affects the predicted values. Do a deeper dive into Neighborhood and House style and lastly investigate if Year of remodel and additional constructions changes the model 
+
+
 
 ---
 # Citations and Special Mentions
 ---
-Data Collected from Gapminder "https://www.gapminder.org/data/"
-Research and quotations from The Guardian "https://www.theguardian.com/doctors-without-borders/2022/nov/21/msf-doctors-without-borders-year-in-review"
-Thank you to Tim Book(GA Staff), Rowan Schaefer(GA Staff) and Piotr Jankowski(friend) for helping debug, simplify and understand
+Ames Housing Data:  "https://www.kaggle.com/competitions/dsi-910-ames-housing-challenge/overview"
+7 Most Expensive Construction Projects: "https://www.international-construction.com/news/7-of-the-world-s-most-expensive-construction-projects/8026711.article"
+Real Estate Development Timeline: "https://lev.co/blog/assets/real-estate-development-timeline/"
+Thanks to Rowan and Tim for answering all my endless questions
